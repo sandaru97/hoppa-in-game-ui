@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity, Image, Animated} from 'react-native';
 import PropTypes from 'prop-types'
-import helpers from '../utils/helpers';
+import helpers from './helpers';
 
 
 
@@ -28,9 +28,9 @@ class GameIcon extends Component {
     return (
     
         <Animated.Image 
-            style={{
+            style={{color:'blue',
                 width:this._getSize ? 40 : 64, 
-                height:this._getSize ? 40 : 64}}
+                height:this._getSize ? 40 : 64,}}
             source={this._getIconPath} />
     );
   }
@@ -41,12 +41,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width:'100%',
-    height:'100%'  
+    height:'100%' ,
+    //backgroundColor:"red"
   },
 
-  buttom:{
+  button:{
       margin:2,      
       borderColor:'#FFF',
+      backgroundColor:'red',
   }  
 });
 export { GameIcon }
