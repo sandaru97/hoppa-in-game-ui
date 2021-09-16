@@ -11,14 +11,14 @@ import { GameButton } from "./gamebutton";
 
 class TimeDisplay extends React.Component {
   render() {
-    return <div style={{ flex: 2, float: "right", margin: 0, padding: "10px", textAlign: "right" }}>Time: {this.props.time}</div>;
+    return <div style={{ flex: 2, float: "right", margin: 0, padding: "10px",paddintBottom:'0', textAlign: "right" }}><img width="35px" height="auto" src={require('./time.png')}/> <span style={{fontSize:"45px"}}>{this.props.time}</span></div>;
   }
 }
 
 class CoinDisplay extends React.Component {
   render() {
-    return <div style={{ flex: 1, padding: "10px" }}>
-      Coins: {this.props.coins}</div>;
+    return <div style={{ flex: 1, padding: "10px",paddingBottom:"0", }}>
+      <img width="35px" height="auto" src={require('./coin.png')}/> <span style={{fontSize:"45px"}}>{this.props.coins}</span></div>;
   }
 }
 /////////// GOALS //////////////
@@ -34,10 +34,10 @@ class Goal extends React.Component {
 
 class JumpDisplay extends React.Component {
   render() {
-    return <View style={{top:'50%',textAlign:'center',margin:0,padding:0,top:"50%", flexDirection: "column",  flex: 1, display: "inline-block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center',  }}><h1>{this.props.jumps}</h1>
+    return <View style={{top:'50%',textAlign:'center',margin:0,padding:0,top:"50%", flexDirection: "column",  flex: 1, display: "inline-block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center',fontSize:"60px",  }}><h1>{this.props.jumps}</h1>
 
     
-      <Text style={{margin:0,padding:0, flex: 1, textAlign: "center", display: "inline-block", float: 'center' }}>
+      <Text style={{ margin:0,padding:0, flex: 1, textAlign: "center", display: "inline-block", float: 'center' ,fontSize:"20px"}}>
         Best : xx</Text></View>;
   }
 }
@@ -45,7 +45,7 @@ class JumpDisplay extends React.Component {
 class Character extends React.Component {
   render() {
     return <div><br clear="left"/><View style={{align:'center',  textAlign: "center",
-      display:"block",float:'center',  clear: "both",    }}><img width='30px' height='30px' src={require('./settings.png')} /></View><br clear="left"/></div>;
+      display:"block",float:'center',  clear: "both",    }}><img width='200px' height='auto' src={require('./char.png')} /></View><br clear="left"/></div>;
   }
 }
 /* class JumpDisplayBest extends React.Component {
@@ -58,6 +58,7 @@ class Character extends React.Component {
 class UIButton extends React.Component {
   render() {
     var btnColor=this.props.color;
+   // var btnImg=;
     var background= "linear-gradient(to bottom, black  10%, "+btnColor+" 50%)";
     
     return <p className="Button" style={{
@@ -68,6 +69,7 @@ class UIButton extends React.Component {
       flex:1,
       // justifyContent:"center",
       padding: "10px",
+      
       cursor: "pointer",
       margin: "5px",
       // marginBottom: "5px",
@@ -78,8 +80,8 @@ class UIButton extends React.Component {
       textDecoration: "none",
       //fontWeight: "bold",
       color: "white",
-      height: "auto",
-      lineHeight: "35px",
+      height: "90px",
+     // lineHeight: "35px",
       //padding: "0 32.5px",
       display: "inline-block",
       width: "16%",
@@ -90,7 +92,9 @@ class UIButton extends React.Component {
       bottom: 0,
       transition: "all 0.06s ease-out",
       //position: "relative",
-    }}>{this.props.text}<img width='30px' height='30px' src={require('./settings.png')} />
+    }}>{this.props.text}
+    <img style={{top:"10%",}} width='40px' height='auto' src={require('./settings.png')} />
+    {/* <br/> Text */}
 
     </p>
   }
@@ -107,13 +111,48 @@ export default function App() {
     <br/>
     <Character  />
 
+        <p style={{
+          padding:"10px",
+                width: "16%",
+justifyContent:"center",
+alignItems:"center",
+          background: "#0e79b2",
+  color: "#e5dc15",
+  //font-family: "Montserrat", sans-serif,
+  textTransform: "uppercase",
+  textDecoration: "none",
+  margin: "1rem",
+  padding: "0.rem",
+  border: "4px solid #e5dc15",
+  borderRadius: "0.5rem",
+  position: "relative",
+  top: "0",
+  transition: "all 300ms ease-in-out",
+  boxShadow: "0 0.6em red, 0 0.9em rgba(0, 0, 0, 0.4)",
+          /* textDecoration: "none",
+  color: "white",
+  width: "200px",
+  height: "100px",
+  background: "#F2385A",
+  position: "relative",
+  margin: "30px",
+  top: "100px",
+  padding: "16px",
+  fontSize: "50px",
+  borderRadius: "10px",
+  boxShadow: "0px 15px 0px 0px darken(red, 5%), 0px 0px 20px 0px #bbb",
 
-      <View style={styles.btnBar}>
-        <UIButton text="" color="red"  />
-        <UIButton text="" color="yellow" />
-        <UIButton text="" color="orange" />
-        <UIButton text="" color="green" />
-        <UIButton text="" color="blue" />
+  transition: "all 0.2s", */
+  //boxShadow: "0px 15px 0px 0px darken(red, 5%)"
+
+  }}>Test</p>
+
+      <View style={styles.btnNew}>
+     <UIButton text="" color="#4FB286"  />
+        <UIButton text="" color="#bbc7a4" />
+        <UIButton text="" color="#8b80f9" />
+        <UIButton text="" color="#dd7230" />
+        <UIButton text="" color="#307351" />
 {/*         <UIButton text="" style={styles.uiButton} />
  */}    
     </View>
@@ -164,6 +203,7 @@ const styles = StyleSheet.create({
     bottom: "0",
     //float:'center',
   }, btnBar: {
+    background: "#0e79b2",
     tableLayout: "fixed",
     display: "fixed",
     overflow: "hidden",
@@ -175,5 +215,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  btnNew:{
+    
+  textDecoration: "none",
+  color: "white",
+  width: "200px",
+  height: "100px",
+  background: "#F2385A",
+  position: "relative",
+  margin: "30px",
+  top: "100px",
+  padding: "16px",
+  fontSize: "50px",
+  borderRadius: "10px",
+  boxShadow: "0px 15px 0px 0px darken($pink-hot, 5%), 0px 0px 20px 0px #bbb",
+
+  transition: "all 0.2s"
+  
+  }
   
 });
