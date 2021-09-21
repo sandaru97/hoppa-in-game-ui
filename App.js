@@ -9,6 +9,9 @@ import podium from './podium.svg';
 import { GameIcon } from "./gameicon";
 import { GameButton } from "./gamebutton";
 
+import { useFonts } from 'expo-font';
+
+
 class TimeDisplay extends React.Component {
   render() {
     return <div style={{ flex: 2, float: "right", margin: 0, padding: "10px",paddintBottom:'0', textAlign: "right" }}><img width="35px" height="auto" src={require('./time.png')}/> <span style={{fontSize:"45px"}}>{this.props.time}</span></div>;
@@ -18,7 +21,7 @@ class TimeDisplay extends React.Component {
 class CoinDisplay extends React.Component {
   render() {
     return <div style={{ flex: 1, padding: "10px",paddingBottom:"0", }}>
-      <img width="35px" height="auto" src={require('./coin.png')}/> <span style={{fontSize:"45px"}}>{this.props.coins}</span></div>;
+      <img width="50px" height="auto" src='https://st3.depositphotos.com/3027583/16082/v/600/depositphotos_160820422-stock-illustration-pixel-ethereum-cripto-currency-blockchain.jpg'/> <span style={{fontSize:"45px"}}>{this.props.coins}</span></div>;
   }
 }
 /////////// GOALS //////////////
@@ -45,7 +48,7 @@ class JumpDisplay extends React.Component {
 class Character extends React.Component {
   render() {
     return <div><br clear="left"/><View style={{align:'center',  textAlign: "center",
-      display:"block",float:'center',  clear: "both",    }}><img width='200px' height='auto' src={require('./char.png')} /></View><br clear="left"/></div>;
+      display:"block",float:'center',  clear: "both",    }}><img width='200px' height='auto' src="https://images.squarespace-cdn.com/content/v1/5a3750f3f14aa149ae492d36/1539816574965-J3G2M19VIW7O36CN6BZ2/teacher.png" /></View><br clear="left"/></div>;
   }
 }
 /* class JumpDisplayBest extends React.Component {
@@ -59,49 +62,37 @@ class UIButton extends React.Component {
   render() {
     var btnColor=this.props.color;
    // var btnImg=;
-    var background= "linear-gradient(to bottom, black  10%, "+btnColor+" 50%)";
+    //var background= "linear-gradient(to bottom, black  10%, "+btnColor+" 50%)";
     
-    return <p className="Button" style={{
+    return <button onMouseEnter={this.background="blue"} onMouseLeave={this.mouseLeave}
+    style={{
       
-      alignItems:'center',flexDirection:"row",
-      float: 'center', justifyContent: 'center',
-      alignItems: 'center', textAlign: "center", justifyContent: "center", alignContent: "center", alignItems: "center",
-      flex:1,
-      // justifyContent:"center",
-      padding: "10px",
       
-      cursor: "pointer",
-      margin: "5px",
-      // marginBottom: "5px",
-      //textShadow: "0 -2px 0 #4a8a65, 0 1px 1px red",
-      boxSizing: "border-box",
-      fontSize: "1em",
-      //fontFamily: "Helvetica, Arial, Sans-Serif",
-      textDecoration: "none",
-      //fontWeight: "bold",
-      color: "white",
-      height: "90px",
-     // lineHeight: "35px",
-      //padding: "0 32.5px",
-      display: "inline-block",
-      width: "16%",
-      background: background,
-      borderRadius: "5px",
-      borderTop: "1px solid #c8e2d3",
-      borderBottom: "3px solid #000000",
-      bottom: 0,
-      transition: "all 0.06s ease-out",
-      //position: "relative",
-    }}>{this.props.text}
-    <img style={{top:"10%",}} width='40px' height='auto' src={require('./settings.png')} />
-    {/* <br/> Text */}
+      background: "red",
+      border: "5px solid brown",
+      font: "inherit",
+      lineHeight: "1",
+      margin: "0.1em",
+      padding: "1em 2em",
+      cornerRadius: "10px",
+      padding: "5px"
+      /* &:hover: {
+        background: 'blue',
+      } */
+      
 
-    </p>
+    }} class="raise"
+      
+      
+      ><img width="50px" height ="auto" src="https://img.icons8.com/ios-filled/50/ffffff/pixel-cat.png"/><br/></button>
   }
 }
 
 export default function App() {
-  return (<div >
+  const [loaded] = useFonts({
+    Montserrat: require('./assets/fonts/Font.ttf'),
+  });
+  return (<div style={{fontFamily:require("./assets/fonts/Font.ttf"),}}>
     <div style={{flexDirection:'column'}}>
     <View style={styles.container} >
       <CoinDisplay coins="100" />
@@ -111,43 +102,9 @@ export default function App() {
     <br/>
     <Character  />
 
-        <p style={{
-          padding:"10px",
-                width: "16%",
-justifyContent:"center",
-alignItems:"center",
-          background: "#0e79b2",
-  color: "#e5dc15",
-  //font-family: "Montserrat", sans-serif,
-  textTransform: "uppercase",
-  textDecoration: "none",
-  margin: "1rem",
-  padding: "0.rem",
-  border: "4px solid #e5dc15",
-  borderRadius: "0.5rem",
-  position: "relative",
-  top: "0",
-  transition: "all 300ms ease-in-out",
-  boxShadow: "0 0.6em red, 0 0.9em rgba(0, 0, 0, 0.4)",
-          /* textDecoration: "none",
-  color: "white",
-  width: "200px",
-  height: "100px",
-  background: "#F2385A",
-  position: "relative",
-  margin: "30px",
-  top: "100px",
-  padding: "16px",
-  fontSize: "50px",
-  borderRadius: "10px",
-  boxShadow: "0px 15px 0px 0px darken(red, 5%), 0px 0px 20px 0px #bbb",
+        
 
-  transition: "all 0.2s", */
-  //boxShadow: "0px 15px 0px 0px darken(red, 5%)"
-
-  }}>Test</p>
-
-      <View style={styles.btnNew}>
+      <View style={styles.btnBar}>
      <UIButton text="" color="#4FB286"  />
         <UIButton text="" color="#bbc7a4" />
         <UIButton text="" color="#8b80f9" />
@@ -162,6 +119,9 @@ alignItems:"center",
 }
 
 const styles = StyleSheet.create({
+  Hover:{
+background:"green",
+  },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -204,7 +164,7 @@ const styles = StyleSheet.create({
     //float:'center',
   }, btnBar: {
     background: "#0e79b2",
-    tableLayout: "fixed",
+    tableLayout: "auto",
     display: "fixed",
     overflow: "hidden",
     flexDirection:'row',

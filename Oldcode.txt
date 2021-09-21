@@ -1,0 +1,36 @@
+<p className="Button" style={{
+      
+      alignItems:'center',flexDirection:"row",
+      float: 'center', justifyContent: 'center',
+      alignItems: 'center', textAlign: "center", justifyContent: "center", alignContent: "center", alignItems: "center",
+      flex:1,
+      // justifyContent:"center",
+      padding: "10px",
+      
+      cursor: "pointer",
+      margin: "5px",
+      // marginBottom: "5px",
+      //textShadow: "0 -2px 0 #4a8a65, 0 1px 1px red",
+      boxSizing: "border-box",
+      fontSize: "1em",
+      //fontFamily: "Helvetica, Arial, Sans-Serif",
+      textDecoration: "none",
+      //fontWeight: "bold",
+      color: "white",
+      height: "90px",
+     // lineHeight: "35px",
+      //padding: "0 32.5px",
+      display: "inline-block",
+      width: "16%",
+      background: background,
+      borderRadius: "5px",
+      borderTop: "1px solid #c8e2d3",
+      borderBottom: "3px solid #000000",
+      bottom: 0,
+      transition: "all 0.06s ease-out",
+      //position: "relative",
+    }}>{this.props.text}
+    <img style={{top:"10%",}} width='40px' height='auto' src={require('./settings.png')} />
+    {/* <br/> Text */}
+
+    </p>
