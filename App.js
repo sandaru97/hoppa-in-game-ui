@@ -5,16 +5,16 @@ import { FaBeer } from 'react-icons/fa';
 import podium from './podium.svg';
 import { GameIcon } from "./gameicon";
 import { GameButton } from "./gamebutton";
-import { useFonts } from 'expo-font';
+//import { useFonts } from 'expo-font';
 import CarterOne from './assets/fonts/CarterOne.ttf';
-import stylesCss from "./index.css";
+//import stylesCss from "./index.css";
 
-import  {useState} from 'react';
+import  useState from 'react';
 
 const styles = StyleSheet.create({
   btn: {
-    background: "red",
-    border: "5px solid brown",
+    backgroundColor: "red",
+    borderStyle: "5px solid brown",
     font: "inherit",
     lineHeight: "1",
     margin: "0.1em",
@@ -41,13 +41,14 @@ const styles = StyleSheet.create({
 var btnStyle = styles.uiButton;
 class TimeDisplay extends React.Component {
   render() {
-    return <div style={{ flex: 2, float: "right", margin: 0, padding: "10px", paddintBottom: '0', textAlign: "right" }}><img width="35px" height="auto" src={require('./time.png')} /> <span style={{ fontSize: "45px" }}>{this.props.time}</span></div>;
+    return <div style={{margin:"15px",display:"inline-block",justifyContent:"center",alignItems:"center", flex:"1",margin:"0",padding:"0",     display: "block",
+      textAlign:"center", width:"auto",backgroundColor:'grey',borderRadius:"30px", flex: 1, float: "right", margin: "10px", padding: "10px", paddintBottom: '0', textAlign: "right" }}><img width="35px" height="auto" src={require('./time.png')} /> <span style={{ fontSize: "45px" }}>{this.props.time}</span></div>;
   }
 }
 
 class CoinDisplay extends React.Component {
   render() {
-    return <div style={{ flex: 1, padding: "10px", paddingBottom: "0", }}>
+    return <div style={{display:"inline-block", flex: 1, padding: "10px", paddingBottom: "0", }}>
       <img width="50px" height="auto" src='https://st3.depositphotos.com/3027583/16082/v/600/depositphotos_160820422-stock-illustration-pixel-ethereum-cripto-currency-blockchain.jpg' /> <span style={{ fontSize: "45px" }}>{this.props.coins}</span></div>;
   }
 }
@@ -93,7 +94,7 @@ class UIButton extends React.Component {
     this.state = { isFocused: false }; 
 
   }
-  onFocusChange = () => {
+  onMouseEnter = () => {
     //isFocused=this.state.isFocused;
     this.setState({ isFocused: true });
 } 
@@ -102,11 +103,11 @@ onMouseLeave = () => {
   this.setState({ isFocused: false });
 }
   render() {
-    return <button   onMouseOver ={this.onFocusChange}onMouseLeave ={this.onMouseLeave}
+    return <button   onMouseEnter ={this.onMouseEnter}onMouseLeave ={this.onMouseLeave}
       style={(this.state.isFocused) ?
         {  
-          background: "red",
-        border: "5px solid brown",
+          //background: "red",
+        border: "5px solid yellow",
         font: "inherit",
         lineHeight: "1",
         margin: "0.1em",
@@ -142,11 +143,13 @@ onMouseLeave = () => {
 export default function App() {
 
   return (<div style={{ fontFamily: CarterOne, }}>
-    ddddd
+    
     <div style={{ padding:"0",margin:'0',flexDirection: 'column' }}>
       <View style={styles.container} >
+        <div style={{display:"inline-block", flexDirection:"column"}}>
         <CoinDisplay coins="100" />
         <TimeDisplay time="1:00" />
+        </div>
       </View>
       <JumpDisplay jumps="100" />
       <br />
