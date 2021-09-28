@@ -69,10 +69,11 @@ class Goal extends React.Component {
 
 class JumpDisplay extends React.Component {
   render() {
-    return <View style={{ top: '50%', textAlign: 'center', margin: 0, padding: 0, top: "50%", flexDirection: "column", flex: 1, display: "inline-block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "60px", }}><h2>{this.props.jumps}</h2>
+    return <View style={{}}
+    ><h2 style={{ top: '40%', textAlign: 'center', margin: 0, padding: 0, top: "40%", flexDirection: "column", flex: 1, display: "block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "10vw", }}>{this.props.jumps}</h2>
 
 
-      <Text style={{ margin: 0, padding: 0, flex: 1, textAlign: "center", display: "inline-block", float: 'center', fontSize: "20px" }}>
+      <Text style={{ margin: 0, padding: 0, flex: 1, textAlign: "center", display: "block", float: 'center', fontSize: "20px" }}>
         Best : xx</Text></View>;
   }
 }
