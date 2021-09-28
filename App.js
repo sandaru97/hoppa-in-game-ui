@@ -69,10 +69,10 @@ class Goal extends React.Component {
 
 class JumpDisplay extends React.Component {
   render() {
-    return <View style={{fontSize:"20vw", top: '50%', textAlign: 'center', margin: 0, padding: 0, top: "50%", flexDirection: "column", flex: 1, display: "inline-block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "20vw", }}><h2>{this.props.jumps}</h2>
+    return <View style={{ top: '50%', textAlign: 'center', margin: 0, padding: 0, top: "50%", flexDirection: "column", flex: 1, display: "inline-block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "60px", }}><h2>{this.props.jumps}</h2>
 
 
-      <Text style={{ margin: 0, padding: 0, flex: 1, textAlign: "center", display: "inline-block", float: 'center', fontSize: "8vw" }}>
+      <Text style={{ margin: 0, padding: 0, flex: 1, textAlign: "center", display: "inline-block", float: 'center', fontSize: "20px" }}>
         Best : xx</Text></View>;
   }
 }
@@ -82,7 +82,8 @@ class Character extends React.Component {
     return <div><br clear="left" /><View style={{
       align: 'center', textAlign: "center",
       display: "block", float: 'center', clear: "both",
-    }}><img width='60%' height='auto' src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/07927925-93f6-4f76-ab05-fe9c53d2303e/d9gef2g-569d7f19-e8a5-4a69-a0e6-1b26bf561e3e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA3OTI3OTI1LTkzZjYtNGY3Ni1hYjA1LWZlOWM1M2QyMzAzZVwvZDlnZWYyZy01NjlkN2YxOS1lOGE1LTRhNjktYTBlNi0xYjI2YmY1NjFlM2UucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.y_uIzuihhkvopCD_ZiJ3DOaa8-6VgnjkeMm_nIunKjo" /></View><br clear="left" /></div>;
+    }}><img width='40%' height='auto' src="https://i.imgur.com/jlJX7mB.png"/>
+    </View><br clear="left" /></div>;
   }
 }
 
@@ -149,33 +150,24 @@ class UIButton extends React.Component {
 }
 
 export default function App() {
-  useFonts({
+  let [fontsLoaded] = useFonts({
     'CarterOne': require('./assets/fonts/CarterOne.ttf'),
   });
+  if (!fontsLoaded) {
+    return("");
+  }
+  return (<div syle={{justifyContent: 'center', 
+    flex: 1, 
+    fontFamily: "CarterOne", 
   
-  return (<div syle={{
-    objectFit:"fill",
-    overflow:"hidden",
-    width:"100%",height:"100%",
-    //justifyContent: 'center', 
-    //flex: 1, 
-    //fontFamily: "CarterOne", 
-    //"fontFamily":"\"ＭＳ Ｐゴシック\"",
-  //backgroundImage: "url('https://i.redd.it/srdhzvztb8o11.gif')",
-  backgroundsize: "fit",
-  //backgroundPosition:"center center",
-  //backgroundRepeat:"no-repeat",
-  backgroundImage:"url('https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif')",
+  backgroundsize: "contain",
+  backgroundImage: "url('https://i.redd.it/srdhzvztb8o11.gif')",
 
-  }}>
+  }}>sss
       
-      <div style={{
-        //backgroundRepeat: "no-repeat",
-  //backgroundSize: "100% 100%", padding: "0", margin: '0', flexDirection: 'column' , backgroundsize: "100% 100%",
-  backgroundImage:"url('https://forum.unity.com/attachments/db09e3908151578928fe53696851e39e-gif.261755/')",
-  //backgroundsize: "auto",
-  //backgroundPosition:"center center",
-  //backgroundRepeat:"no-repeat",
+      <div style={{backgroundRepeat: "no-repeat",
+  backgroundSize: "100% 100%", padding: "0", margin: '0', flexDirection: 'column' , backgroundsize: "100% 100%",
+  backgroundImage:"url('https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif')",
   }}>
         <View style={{}} style={styles.container} >
           <div style={{ display: "inline-block", flexDirection: "column" }}>
