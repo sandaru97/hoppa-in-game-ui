@@ -6,7 +6,7 @@ import podium from './podium.svg';
 import { GameIcon } from "./gameicon";
 import { GameButton } from "./gamebutton";
 //import { useFonts } from 'expo-font';
-import CarterOne from './assets/fonts/CarterOne.ttf';
+import Font0 from './assets/fonts/Font0.ttf';
 //import stylesCss from "./index.css";
 
 import useState from 'react';
@@ -68,9 +68,22 @@ class Goal extends React.Component {
 }
 
 class JumpDisplay extends React.Component {
+  
   render() {
+    
     return <View style={{}}
-    ><h2 style={{ top: '40%', textAlign: 'center', margin: 0, padding: 0, top: "40%", flexDirection: "column", flex: 1, display: "block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "10vw", }}>{this.props.jumps}</h2>
+    ><Text style={{ top: '40%', textAlign: 'center', margin: 0, padding: 0, top: "40%", flexDirection: "column", flex: 1, display: "block", float: "center", display: "block", display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "10vw",
+    textShadowColor: 'white',
+  textShadowOffset: {width: -1, height: 1},
+  textShadowRadius: 10,
+  fontFamily:"Font0",
+  "text-transform": "uppercase",
+	//background: "linear-gradient(to right, #30CFD0 0%, #330867 100%)",
+  "-webkit-background-clip": "text",
+  color:"red",
+
+  //"-webkit-text-fill-color": "transparent",
+}}>{this.props.jumps}</Text>
 
 
       <Text style={{ margin: 0, padding: 0, flex: 1, textAlign: "center", display: "block", float: 'center', fontSize: "20px" }}>
@@ -152,14 +165,14 @@ class UIButton extends React.Component {
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    'CarterOne': require('./assets/fonts/CarterOne.ttf'),
+    'Font0': require('./assets/fonts/Font0.ttf'),
   });
   if (!fontsLoaded) {
     return("");
   }
   return (<div syle={{justifyContent: 'center', 
     flex: 1, 
-    fontFamily: "CarterOne", 
+    fontFamily: "Font0", 
   
   backgroundsize: "contain",
   backgroundImage: "url('https://i.redd.it/srdhzvztb8o11.gif')",
