@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { FaBeer } from "react-icons/fa";
+import { FaCoins } from "react-icons/fa";
 import podium from "./podium.svg";
 import { GameIcon } from "./gameicon";
 import { GameButton } from "./gamebutton";
@@ -82,25 +82,36 @@ class CoinDisplay extends React.Component {
     return (
       <div
         style={{
+
           display: "inline-block",
           flex: 1,
           padding: "10px",
-          paddingBottom: "0",
+          margin:"0",
+          //paddingBottom: "0",
         }}
       >
-        <img
-          width="50px"
-          height="auto"
-          src="https://lh3.googleusercontent.com/proxy/TDV1UaT2Sa9gL2kAYifatLyu0SqIYUyweJIF4-cXbEPN9xyigVfuXOfr1rHbz2bDRVODkvFLohdhtB8TwMcoSuLtqebSkq7W"
-        />
+        
         <span
           style={{
+            textShadowRadius: 10,
+              textShadowColor: "white",
+            display:"inline-block",
             fontFamily: "Font0",
             color: "yellow",
             fontSize: "20px",
+            padding: "0",
+          margin:"0",
           }}
         >
           {" "}
+          <FaCoins style={{paddingRight:"5px"}}/> 
+          {/* <img
+          style={{            display:"inline-block",
+        }}
+          width="50px"
+          height="auto"
+          src="https://lh3.googleusercontent.com/proxy/TDV1UaT2Sa9gL2kAYifatLyu0SqIYUyweJIF4-cXbEPN9xyigVfuXOfr1rHbz2bDRVODkvFLohdhtB8TwMcoSuLtqebSkq7W"
+        /> */}
           {this.props.coins}{" "}
         </span>
       </div>
