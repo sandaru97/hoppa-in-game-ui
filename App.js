@@ -45,33 +45,45 @@ class TimeDisplay extends React.Component {
     return (
       <div
         style={{
-          fontFamily: "OCR A Std, monospace",
-          fontSmooth: "never",
-          WebkitFontSmoothing: "none",
-          height: "30px",
-          margin: "15px",
+float:"right",
           display: "inline-block",
-          justifyContent: "center",
-          alignItems: "center",
-          flex: "1",
-          margin: "0",
-          padding: "0",
-          display: "block",
-          textAlign: "center",
-          width: "auto",
-          backgroundColor: "grey",
-          borderRadius: "30px",
           flex: 1,
-          float: "right",
-          margin: "10px",
           padding: "10px",
-          paddintBottom: "0",
-          textAlign: "right",
+          margin:"0",
+          //paddingBottom: "0",
         }}
       >
-        {" "}
-        <img width="25px" height="auto" src={require("./time.png")} />{" "}
-        <span style={{ fontSize: "35px" }}>{this.props.time}</span>{" "}
+        
+        <span
+          style={{
+            background:"linear-gradient(yellow, black)",
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
+
+            textShadowRadius: 10,
+              textShadowColor: "white",
+          display:"inline-block",
+            fontFamily: "Font0",
+            color: "yellow",
+            fontSize: "5vw",
+            padding: "0",
+          margin:"0",
+          }}
+        >
+          {" "}
+         {/*  <FaCoins style={{background:"linear-gradient(yellow, black)",
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
+paddingRight:"5px"}}/>  */}
+          {/* <img
+          style={{            display:"inline-block",
+        }}
+          width="50px"
+          height="auto"
+          src="https://lh3.googleusercontent.com/proxy/TDV1UaT2Sa9gL2kAYifatLyu0SqIYUyweJIF4-cXbEPN9xyigVfuXOfr1rHbz2bDRVODkvFLohdhtB8TwMcoSuLtqebSkq7W"
+        /> */}
+          {this.props.time}{" "}
+        </span>
       </div>
     );
   }
@@ -93,18 +105,25 @@ class CoinDisplay extends React.Component {
         
         <span
           style={{
+            background:"linear-gradient(yellow, black)",
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
+
             textShadowRadius: 10,
               textShadowColor: "white",
-            display:"inline-block",
+          display:"inline-block",
             fontFamily: "Font0",
             color: "yellow",
-            fontSize: "20px",
+            fontSize: "5vw",
             padding: "0",
           margin:"0",
           }}
         >
           {" "}
-          <FaCoins style={{paddingRight:"5px"}}/> 
+          <FaCoins style={{background:"linear-gradient(yellow, black)",
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
+paddingRight:"5px"}}/> 
           {/* <img
           style={{            display:"inline-block",
         }}
@@ -142,22 +161,22 @@ class JumpDisplay extends React.Component {
     return (
       <div
         style={{
-          top: "50%",
+          //top: "10%",
         }}
       >
         <View
           style={{
-            top: "50%",
+            //top: "10%",
             transform: "translateY(-50%)",
           }}
         >
           <Text
             style={{
-              top: "50%",
+              //top: "20%",
               textAlign: "center",
               margin: 0,
               padding: 0,
-              top: "40%",
+              //top: "10%",
               flexDirection: "column",
               flex: 1,
               display: "block",
@@ -197,7 +216,7 @@ class JumpDisplay extends React.Component {
               textAlign: "center",
               display: "block",
               float: "center",
-              fontSize: "20px",
+              fontSize: "5vw",
             }}
           >
             Best: xx{" "}
@@ -268,6 +287,8 @@ class UIButton extends React.Component {
   render() {
     return (
       <button
+      style={{width: "fit-content",
+          "block-size": "fit-content"}}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         style={
@@ -300,7 +321,7 @@ class UIButton extends React.Component {
                 padding: "5px",
                 borderRadius: "10%",
               }
-        }
+        } 
       >
         <img
           style={{
@@ -354,7 +375,7 @@ export default function App() {
         <View
           style={{
             top: "100%",
-            marginTop: "40%",
+            marginTop: "10%",
           }}
         >
           <JumpDisplay jumps="100" />
