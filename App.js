@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View,ImageBackground } from "react-native";
 import { FaCoins } from "react-icons/fa";
 import podium from "./podium.svg";
 import { GameIcon } from "./gameicon";
@@ -12,6 +12,10 @@ import useState from "react";
 import { useFonts } from "expo-font";
 
 const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    justifyContent: "center"
+  },
   btn: {
     backgroundColor: "red",
     borderStyle: "5px solid brown",
@@ -346,6 +350,8 @@ export default function App() {
     return "";
   }
   return (
+    <ImageBackground source={"https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif"} resizeMode="cover" style={styles.image}>
+
     <div>
       <div
         style={{
@@ -355,8 +361,7 @@ export default function App() {
           margin: "0",
           flexDirection: "column",
           backgroundsize: "100% auto",
-          backgroundImage:
-            "url('https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif')",
+          //backgroundImage:"url('https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif')",
         }}
       >
         <View style={{}} style={styles.container}>
@@ -392,6 +397,8 @@ export default function App() {
            */}{" "}
         </View>{" "}
       </div>{" "}
+      
     </div>
+    </ImageBackground>
   );
 }
