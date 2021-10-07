@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View,ImageBackground } from "react-native";
+import { StyleSheet, Text, View,ImageBackground,Image } from "react-native";
 import { FaCoins } from "react-icons/fa";
 import podium from "./podium.svg";
 import { GameIcon } from "./gameicon";
@@ -69,7 +69,7 @@ float:"right",
           display:"inline-block",
             fontFamily: "Font0",
             color: "yellow",
-            fontSize: "5vw",
+            fontSize: "8vw",
             padding: "0",
           margin:"0",
           }}
@@ -118,9 +118,11 @@ class CoinDisplay extends React.Component {
           display:"inline-block",
             fontFamily: "Font0",
             color: "yellow",
-            fontSize: "5vw",
+            fontSize: "8vw",
             padding: "0",
           margin:"0",
+          textShadowRadius: 10,
+              textShadowColor: "white",
           }}
         >
           {" "}
@@ -189,7 +191,7 @@ class JumpDisplay extends React.Component {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              fontSize: "10vw",
+              fontSize: "12vw",
               textShadowColor: "white",
               textShadowOffset: {
                 width: -1,
@@ -349,22 +351,17 @@ export default function App() {
   if (!fontsLoaded) {
     return "";
   }
+  //const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+
   return (
-    <ImageBackground source={"https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif"} resizeMode="cover" style={styles.image}>
+
+    
+    <ImageBackground style={{height:"100%",
+}} source={"https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif"} resizeMode="fill" >
 
     <div>
-      <div
-        style={{
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "100% auto",
-          padding: "0",
-          margin: "0",
-          flexDirection: "column",
-          backgroundsize: "100% auto",
-          //backgroundImage:"url('https://64.media.tumblr.com/3c954f47fdbbc285e110103d201803c1/tumblr_ps8ihv0nhj1tk1tg8o1_500.gif')",
-        }}
-      >
-        <View style={{}} style={styles.container}>
+      
+        <View  style={styles.container}>
           <div
             style={{
               display: "inline-block",
@@ -377,16 +374,17 @@ export default function App() {
         </View>{" "}
         <br />
         <br />
-        <View
+        <div
           style={{
-            top: "100%",
-            marginTop: "10%",
+            //top: "100%",
+            marginTop: "20%",
           }}
         >
           <JumpDisplay jumps="100" />
           <br />
           <Character style={{}} />{" "}
-        </View>
+        </div>
+        <br/>
         <View style={{}} style={styles.btnBar}>
           <UIButton text="" color="#4FB286" />
           <UIButton text="" color="#bbc7a4" />
@@ -396,9 +394,8 @@ export default function App() {
           {/*         <UIButton text="" style={styles.uiButton} />
            */}{" "}
         </View>{" "}
-      </div>{" "}
-      
-    </div>
+    {" "}
+      </div>
     </ImageBackground>
   );
 }
